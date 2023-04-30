@@ -30,6 +30,7 @@
     width: 187px;
     height: 187px;
     margin-right: 16px;
+    object-fit: cover;
 }
 
 .person__head-wrapper {
