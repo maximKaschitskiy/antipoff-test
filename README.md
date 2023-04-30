@@ -25,3 +25,8 @@ npm run start
 -   third-party api for load mock-data
 -   Yup library for form-validation 
 -   Webpack for build
+
+#### What i can add:
+- edit 'focus' of css-styles condition on elements
+- send form by 'enter'-key
+- complete notification, that user already exist
