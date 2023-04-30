@@ -5,9 +5,9 @@ import uniqid from "uniqid";
 import getUrl from '../api/Api';
 import LogoutButton from "../components/LogoutButton";
 import { PersonType, PageType } from '../types/types';
-import { setToStorage } from "../utils/storage";
+import { setToStorage, getStorage } from "../utils/storage";
 
-import { setLike } from "../redux/slice/likes";
+import { setLike, setLikes } from "../redux/slice/likes";
 import { setUsers } from "../redux/slice/ourTeam";
 import { setPage } from '../redux/slice/pageData';
 import { RootState } from "../redux/store/store";
@@ -50,18 +50,6 @@ const OurTeam: React.FC = () => {
       });
   }
 
-  React.useEffect(()=>{
-    setToStorage(localStorage, "likes", likesState);
-  },[likesState]);
-
-  React.useMemo(() => {
-    const apiUrl = 'https://reqres.in/api/users?page=1';
-    if (teamState.length === 0) {
-      console.log(teamState.length);
-      fetchData(apiUrl);
-    }
-  }, []);
-
   const nextPage = () => {
     const baseUrl = 'https://reqres.in/api/users?page=';
     if (JSON.stringify(page) !== '{}') {
@@ -70,6 +58,34 @@ const OurTeam: React.FC = () => {
       }
     }
   }
+
+  React.useEffect(() => {
+    if (JSON.stringify(likesState) !== '{}') {
+      setToStorage(localStorage, "likes", likesState);
+    }
+  },[likesState]);
+
+  React.useEffect(() => {
+    if (JSON.stringify(likesState) !== '{}') {
+      setToStorage(localStorage, "likes", likesState);
+    }
+  },[likesState]);
+
+  React.useEffect(() => {
+    const likes = getStorage(localStorage, "likes");
+    if (likes) {
+      if (JSON.stringify(likes) !== '{}') {
+        dispatch(setLikes(likes));
+      }
+    }
+  }, []);
+
+  React.useMemo(() => {
+    const apiUrl = 'https://reqres.in/api/users?page=1';
+    if (teamState.length === 0) {
+      fetchData(apiUrl);
+    }
+  }, []);
 
   return (
     <div className="our-team">

@@ -207,6 +207,11 @@
     cursor: pointer;
 }
 
+.our-team__load-more:disabled {
+    border: 1px solid #151317;
+    background-color: #fafafa;
+}
+
 .our-team__load-more-title {
     font-family: 'Roboto';
     font-style: normal;
