@@ -4,7 +4,7 @@
   "description": "test task for antipoff",
   "scripts": {
     "start": "webpack serve --mode development --open --port 8080",
-    "build": "webpack --mode development --stats-error-details"
+    "build": "webpack --mode production --stats-error-details"
   },
   "author": "Kaschitskiy Maxim",
   "license": "ISC",
