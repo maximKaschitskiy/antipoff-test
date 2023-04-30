@@ -1,0 +1,23 @@
+.main {
+  width: 100%;
+  height: max-content;
+  box-sizing: border-box;
+}
+
+#app {
+    width: 100%;
+    height: max-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color:  #FFFFFF;
+    font-family: "Roboto", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+}
+
+body {
+  
+}

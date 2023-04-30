@@ -1,0 +1,331 @@
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.person__head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: max-content;
+    box-sizing: border-box;
+    background-color: #512689;
+}
+
+.person__head-description {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.person__head-photo {
+    border-radius: 50%;
+    width: 187px;
+    height: 187px;
+    margin-right: 16px;
+}
+
+.person__head-wrapper {
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 39px;
+    margin-bottom: 39px;
+}
+
+.person__head-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 75px;
+    color: #FFFFFF;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.person__head-role {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: #FFFFFF;
+    margin: 0;
+    margin-top: 8px
+}
+
+.person__logout {
+    box-sizing: border-box;
+    width: 81px;
+    height: 38px;
+    border: 1px solid #F8F8F8;
+    border-radius: 8px;
+    background-color: transparent;
+    align-self: flex-start;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.person__logout-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 136.19%;
+    color: #F8F8F8;
+    margin: 0;
+}
+
+.person__logout-icon {
+    display: none;
+}
+
+.person__load-more-icon {
+    object-fit: contain;
+    margin-left: 6px;
+}
+
+.person__contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.person__contacts-item {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.person__contacts-icon {
+    margin-right: 5px;
+}
+
+.person__contacts-item:first-child {
+    margin-bottom: 14.5px;
+  }
+
+  .person__contacts-item:last-child {
+    margin-top: 14.5px;
+  }
+
+.person__contacts-sign {
+    font-style: normal;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 136.19%;
+    color: #151317;
+    margin-left: 5px;
+}
+
+.person__description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.person__paragraph:first-child {
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+.person__paragraph:last-child {
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+.person__paragraph {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 136.19%;
+    color: #151317;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.person__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 374px) {
+
+    .person__contacts {
+        width: 91.46%;
+    }
+
+    .person__head-title {
+        font-size: 9vw;
+        line-height: 11.2vw;
+    }
+
+    .person__head-role {
+        font-size: 5.33vw;
+        line-height: 6.13vw;
+    }
+
+    .person__article {
+        width: 91.46%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 32px;
+    }
+
+    .person__logout_state_right {
+        width: 18px;
+        margin-right: 7.87vw;
+        margin-top: 23px;
+    }
+
+    .person__logout_state_left {
+        width: 18px;
+        margin-left: 7.87vw;
+        margin-top: 23px;
+    }
+
+}
+
+@media only screen and (min-width: 374px) and (max-width: 768px) {
+    .person__contacts {
+        align-self: center;
+        width: calc(26.94vw + 241px);
+        margin-bottom: 17px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .person__article {
+        margin-top: 17px;
+        margin-bottom: 32px;
+    }
+
+    .person__description {
+        flex-direction: column;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    } 
+
+    .person__head-wrapper{
+        flex-direction: column-reverse;
+        margin-top: 64px;
+        margin-bottom: 64px;
+    }
+
+    .person__logout {
+        width: 40px;
+        height: 40px;
+        border: 0;
+    }
+
+    .person__logout-title {
+        display: none;
+    }
+
+    .person__logout-icon {
+        display: block;
+    }
+
+    .person__head-photo {
+        margin-right: 0;
+        margin-top: 8px;
+    }
+    
+    .person__head-description {
+        margin-left: 0;
+        margin-bottom: 8px;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 374px) and (max-width: 1140px) {
+
+    .person__head-title {
+        font-size: calc(2.62vw + 26px);
+        line-height: calc(3.09vw + 30px);
+    }
+
+    .person__head-role {
+        font-size: calc(1.12vw + 15px);
+        line-height: calc(1.4vw + 17px);
+    }
+
+    .person__article {
+        width: calc(26.94vw + 241px);
+    }
+
+    .person__logout_state_right {
+        width: calc(6.64vw + 4px);
+        margin-right: calc(6.64vw + 4px);
+        margin-top: 28px;
+    }
+
+    .person__logout_state_left {
+        width: calc(6.64vw + 4px);
+        margin-left: calc(6.64vw + 4px);
+        margin-top: 28px;
+    }
+
+}
+
+@media only screen and (min-width: 1141px) {
+
+    .person__head-description {
+        align-items: flex-start;
+    } 
+
+    .person__head-title {
+        font-size: 64px;
+        line-height: 75px;
+    }
+
+    .person__head-role {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .person__article {
+        width: 630px;
+    }
+
+    .person__logout_state_left {
+        width: 80px;
+        margin-left: 80px;
+        margin-top: 32px;
+    }
+
+    .person__logout_state_right {
+        width: 80px;
+        margin-right: 80px;
+        margin-top: 32px;
+    }
+
+}

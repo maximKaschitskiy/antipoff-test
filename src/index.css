@@ -1,0 +1,6 @@
+@import url('./styles/normalize.css');
+@import url('./fonts/fonts.css');
+@import url('./styles/main.css');
+@import url('./styles/pages/SignUp.css');
+@import url('./styles/pages/OurTeam.css');
+@import url('./styles/pages/Person.css');
