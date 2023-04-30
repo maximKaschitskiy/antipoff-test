@@ -7,19 +7,24 @@ import { PersonType } from '../../types/types';
     name: 'team',
     initialState,
     reducers: {
-      setUsers(state, action: PayloadAction<PersonType[]>) {
+      addUsers(state, action: PayloadAction<PersonType[]>) {
         return [...state, ...action.payload];
       },
+      setUsers(state, action: PayloadAction<PersonType[]>) {
+        return action.payload;
+      },
     },
+    
   });
   
 const {
-  setUsers,
+  setUsers, addUsers
 } = teamSlice.actions;
 
 const teamReducer = teamSlice.reducer;
 
 export {
     setUsers,
+    addUsers,
     teamReducer
 };

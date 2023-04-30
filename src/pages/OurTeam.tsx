@@ -8,7 +8,7 @@ import { PersonType, PageType } from '../types/types';
 import { setToStorage, getStorage } from "../utils/storage";
 
 import { setLike, setLikes } from "../redux/slice/likes";
-import { setUsers } from "../redux/slice/ourTeam";
+import { setUsers, addUsers } from "../redux/slice/ourTeam";
 import { setPage } from '../redux/slice/pageData';
 import { RootState } from "../redux/store/store";
 
@@ -28,6 +28,10 @@ const OurTeam: React.FC = () => {
     dispatch(setUsers(persons));
   };
 
+  const handleAddUsers = (persons: PersonType[]) => {
+    dispatch(addUsers(persons));
+  };
+
   const hadleSetPage = (persons: PageType) => {
     dispatch(setPage(persons));
   };
@@ -41,12 +45,21 @@ const OurTeam: React.FC = () => {
     }
   };
 
-  const fetchData = (url: string) => {
+  const loadTeam = (url: string) => {
     getUrl(url)
       .then(data => {
         const { page, per_page, total, total_pages } = data;
         hadleSetPage({ page, per_page, total, total_pages });
         handleSetUsers(data.data);
+      });
+  }
+
+  const addTeam = (url: string) => {
+    getUrl(url)
+      .then(data => {
+        const { page, per_page, total, total_pages } = data;
+        hadleSetPage({ page, per_page, total, total_pages });
+        handleAddUsers(data.data);
       });
   }
 
@@ -66,12 +79,6 @@ const OurTeam: React.FC = () => {
   },[likesState]);
 
   React.useEffect(() => {
-    if (JSON.stringify(likesState) !== '{}') {
-      setToStorage(localStorage, "likes", likesState);
-    }
-  },[likesState]);
-
-  React.useEffect(() => {
     const likes = getStorage(localStorage, "likes");
     if (likes) {
       if (JSON.stringify(likes) !== '{}') {
@@ -83,7 +90,7 @@ const OurTeam: React.FC = () => {
   React.useMemo(() => {
     const apiUrl = 'https://reqres.in/api/users?page=1';
     if (teamState.length === 0) {
-      fetchData(apiUrl);
+      loadTeam(apiUrl);
     }
   }, []);
 
@@ -126,7 +133,7 @@ const OurTeam: React.FC = () => {
               onClick={() => {
                 const apiUrl = nextPage();
                 if (apiUrl) {
-                  fetchData(apiUrl);
+                  addTeam(apiUrl);
                 }
               }}
               disabled={
